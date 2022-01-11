@@ -1,0 +1,17 @@
+name: test-workflow
+on: [push, pull_request]
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    #if: ${{ false }}  # disable for now
+    steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v2
+      - name: Select Java Version
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+          cache: 'maven'
+
+      - run: echo $GITHUB_WORKFLOW
