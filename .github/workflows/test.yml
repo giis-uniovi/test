@@ -11,7 +11,7 @@ jobs:
       - name: Checkout GitHub repo
         uses: actions/checkout@v2
 
-      - run: echo $option
+      - run: echo ${{ matrix.option }}
       - run: echo $GITHUB_WORKFLOW
       - run: echo $GITHUB_RUN_ID
       - run: echo $GITHUB_RUN_NUMBER
