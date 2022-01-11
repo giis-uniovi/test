@@ -4,7 +4,7 @@ jobs:
   test-job:
     strategy:
       matrix:
-        optione: [headless, selenoid]
+        option: [headless, selenoid]
     runs-on: ubuntu-latest
     #if: ${{ false }}  # disable for now
     steps:
