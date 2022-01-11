@@ -2,12 +2,16 @@ name: test-workflow
 on: [push, pull_request]
 jobs:
   test-job:
+    strategy:
+      matrix:
+        optione: [headless, selenoid]
     runs-on: ubuntu-latest
     #if: ${{ false }}  # disable for now
     steps:
       - name: Checkout GitHub repo
         uses: actions/checkout@v2
 
+      - run: echo $option
       - run: echo $GITHUB_WORKFLOW
       - run: echo $GITHUB_RUN_ID
       - run: echo $GITHUB_RUN_NUMBER
