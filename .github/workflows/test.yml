@@ -7,11 +7,5 @@ jobs:
     steps:
       - name: Checkout GitHub repo
         uses: actions/checkout@v2
-      - name: Select Java Version
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '8'
-          cache: 'maven'
 
       - run: echo $GITHUB_WORKFLOW
